@@ -3,6 +3,7 @@
 use App\Enums\Category;
 use App\Http\Controllers\BasicController;
 use App\Http\Controllers\Testcontroller;
+use App\Http\Middleware\AfterMiddleware;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
@@ -117,3 +118,8 @@ Route::get('/current-route', function(){
 
     return $route->uri . ' - ' . $routeName . ' - ' ;
 })->name('route');
+
+// 3.2 register middleware in route web 
+Route::get('/middleware',function(){
+    return 'this route is bind with afterMiddleware';
+})->middleware(AfterMiddleware::class);
