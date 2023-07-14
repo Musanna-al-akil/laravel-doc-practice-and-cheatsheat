@@ -2,6 +2,8 @@
 
 use App\Enums\Category;
 use App\Http\Controllers\BasicController;
+use App\Http\Controllers\PhotoController;
+use App\Http\Controllers\SingleActionController;
 use App\Http\Controllers\Testcontroller;
 use App\Http\Middleware\AfterMiddleware;
 use App\Models\User;
@@ -24,9 +26,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/hello',function(){
-    return 'ola! how are you??';
-});
+
+Route::get('/hello',SingleActionController::class)->name('hello');//2.(4) single action controller
 
 //2. route with method
 Route::get('/route-with-method',[BasicController::class,'routeWithMethod']);
@@ -123,3 +124,5 @@ Route::get('/current-route', function(){
 Route::get('/middleware',function(){
     return 'this route is bind with afterMiddleware';
 })->middleware(AfterMiddleware::class);
+
+Route::resource('photos',PhotoController::class);
