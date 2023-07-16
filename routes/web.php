@@ -126,3 +126,7 @@ Route::get('/middleware',function(){
 })->middleware(AfterMiddleware::class);
 
 Route::resource('photos',PhotoController::class);
+
+//5.1 accessing request
+
+Route::get('/requestpractice',[BasicController::class,'requestPractice'])->name('requestPractic');
