@@ -21,7 +21,7 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-//1. basic router with closure
+//1. basic router with closure && 6.1 response string & array
 Route::get('/', function () {
     return view('welcome');
 });
@@ -128,5 +128,7 @@ Route::get('/middleware',function(){
 Route::resource('photos',PhotoController::class);
 
 //5.1 accessing request
-
 Route::get('/requestpractice',[BasicController::class,'requestPractice'])->name('requestPractic');
+
+//6 && 6.3 Cache Control Middleware
+Route::get('/responsepractice',[BasicController::class,'responsePractice'])->name('responsePractic')->middleware('cache.headers:public;max_age=2628000;etag');

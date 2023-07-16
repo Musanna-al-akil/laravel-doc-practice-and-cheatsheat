@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Routing\ResponseFactory;
+use Illuminate\Support\Facades\Cookie;
 use Illuminate\Support\Facades\View;
 
 class BasicController extends Controller
@@ -68,5 +69,22 @@ class BasicController extends Controller
         return response("dasdf")->header(
                 'X-Header-One', 'Header Value',
             );
+    }
+
+    public function responsePractice(){
+        /*6.1.2 response object
+        return response('hello', 200);
+        */
+
+        //6.2 header && 6.4 cookie 
+        return response()->view('/responsePractice')->header('X-Header','value')->cookie('cookieTest','cookie',10);
+
+        /* 6.6 redirect && 6.10 session
+        return redirect('/')->with('msg','errors');
+
+        6.6 back previous url
+        return back()->withInput();
+        */
+
     }
 }
