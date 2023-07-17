@@ -132,3 +132,6 @@ Route::get('/requestpractice',[BasicController::class,'requestPractice'])->name(
 
 //6 && 6.3 Cache Control Middleware
 Route::get('/responsepractice',[BasicController::class,'responsePractice'])->name('responsePractic')->middleware('cache.headers:public;max_age=2628000;etag');
+
+//7 
+Route::get('viewpractice',[BasicController::class,'viewPractice'])->name('viewPractice');

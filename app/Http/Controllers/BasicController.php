@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Routing\ResponseFactory;
 use Illuminate\Support\Facades\Cookie;
+use Illuminate\Support\Facades\Facade;
 use Illuminate\Support\Facades\View;
 
 class BasicController extends Controller
@@ -86,5 +87,14 @@ class BasicController extends Controller
         return back()->withInput();
         */
 
+    }
+
+    public function viewPractice(){
+
+        //7.1 create view & pass data & verify if it exits
+        //View::make('viewPractice',[$varName=> $varValue]);
+        if(View::exists('viewPractice')){
+            return view('viewPractice',['name'=>'musanna']);
+        }
     }
 }
