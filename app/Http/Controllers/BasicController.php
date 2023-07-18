@@ -89,12 +89,12 @@ class BasicController extends Controller
 
     }
 
-    public function viewPractice(){
+    public function viewAndBlade(){
 
         //7.1 create view & pass data & verify if it exits
         //View::make('viewPractice',[$varName=> $varValue]);
-        if(View::exists('viewPractice')){
-            return view('viewPractice',['name'=>'musanna']);
+        if(View::exists('viewAndBlade')){
+            return view('viewAndBlade',['name'=>'musanna']);
         }
     }
 }

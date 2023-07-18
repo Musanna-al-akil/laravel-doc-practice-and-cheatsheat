@@ -22,6 +22,6 @@ class ViewServiceProvider extends ServiceProvider
     public function boot(): void
     {
         //7.3
-        View::composer('viewPractice', MsgComposer::class);
+        View::composer('viewAndBlade', MsgComposer::class);
     }
 }
