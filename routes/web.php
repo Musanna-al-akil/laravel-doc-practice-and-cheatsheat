@@ -54,7 +54,12 @@ Route::view('/welcome','welcome',['name' => 'musanna']);
 
 Route::get('/user/{name}/id/{id}', function(Request $request, string $name, int $id ){
     return 'name : ' . $name . ' - ' . $id;  
-});
+})->name('userName');
+
+// 10.5 sign url validation with middleware
+Route::get('/sign/user/{name}/id/{id}', function(Request $request, string $name, int $id ){
+    return 'name : ' . $name . ' - ' . $id . ' and this is a sign url';  
+})->name('signUrl')->middleware('signed');
 
 Route::get('/name/{name?}',function(string $name = 'musanna'){
     return $name;

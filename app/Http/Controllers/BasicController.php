@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Routing\ResponseFactory;
 use Illuminate\Support\Facades\Cookie;
 use Illuminate\Support\Facades\Facade;
+use Illuminate\Support\Facades\URL;
 use Illuminate\Support\Facades\View;
 
 class BasicController extends Controller
@@ -77,8 +78,24 @@ class BasicController extends Controller
         return response('hello', 200);
         */
 
+        // 10.1 generating urls
+        $url = url('/post/1');
+        // 10.2 generating urls
+        // $currentPath = url()->previous();
+        $currentPath = url()->full();
+
+        // 10.3 generating urls with named route
+        $currentPathWithName = route('userName',['name'=>'musanna','id'=>5,'ping'=>'pong']);
+        //https://example.com/user/musanna/id/5/?ping=pong
+
+        //10.4 generate sign url
+        //signUrl = Url::signedRoute('signUrl',['name'=>'musanna','id'=>5,'ping'=>'pong']);
+        $signUrl = URL::temporarySignedRoute('signUrl',now()->addMinutes(10),['name'=>'musanna','id'=>5,'ping'=>'pong']);
+
+        
         //6.2 header && 6.4 cookie 
-        return response()->view('/responsePractice')->header('X-Header','value')->cookie('cookieTest','cookie',10);
+        return response()->view('/responsePractice',
+        ['url'=>$url,'currentPath'=>$currentPath,'currentPathWithName' =>$currentPathWithName,'signUrl'=> $signUrl])->header('X-Header','value')->cookie('cookieTest','cookie',10);
 
         /* 6.6 redirect && 6.10 session
         return redirect('/')->with('msg','errors');
