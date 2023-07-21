@@ -8,17 +8,22 @@
 <body>
 
     <!-- 10.1 generating urls -->
-    <p>{{$url}}</p>
+    <p>{{$data['url']}}</p>
     <!-- 10.2 current path -->
-    <p>{{$currentPath}}</p>
+    <p>{{$data['currentPath']}}</p>
     <!-- 10.3 current path with route name -->
-    <p>{{$currentPathWithName}}</p>
+    <p>{{$data['currentPathWithName']}}</p>
     <!-- 10.4 generate sign url -->
-    <p>{{$signUrl}}</p>
+    <p>{{$data['signUrl']}}</p>
 
     <h1 class="ping">response</h1>
-
     <!-- 9.7 loading image-->
-    <img width=500px height=700px  src="{{ Vite::asset('resources/images/img.jpg')}} ">
+    <img width=300px height=400px  src="{{ Vite::asset('resources/images/img.jpg')}} ">
+
+    <h1>11.1 Session</h1>
+    
+    <a href="{{$data['previous']}}"> {{$data['previous']}}</a>
+
+    <p style="color:blue;"> {{Session::get('status')}}</p>
 </body>
 </html>

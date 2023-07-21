@@ -62,7 +62,8 @@ class BasicController extends Controller
         
         //5.11 get single input value
         $singleInput= $request->input('name');
-        echo $singleInput . '<br>';
+        echo $singleInput . '<br>'
+        ;
 
         //5.12 get single query value
         $singleQuery= $request->query('name');
@@ -73,7 +74,7 @@ class BasicController extends Controller
             );
     }
 
-    public function responsePractice(){
+    public function responsePractice(Request $request){
         /*6.1.2 response object
         return response('hello', 200);
         */
@@ -92,10 +93,39 @@ class BasicController extends Controller
         //signUrl = Url::signedRoute('signUrl',['name'=>'musanna','id'=>5,'ping'=>'pong']);
         $signUrl = URL::temporarySignedRoute('signUrl',now()->addMinutes(10),['name'=>'musanna','id'=>5,'ping'=>'pong']);
 
+        //11.6 store session
+        session(['ranName'=>['ping'=>'1']]);
+        if($request->session()->exists('ranName')){
+            $ran= rand(1,100);
+            $request->session()->push('ranName', (string)$ran );
+
+            
+        }
         
+        //11.4 retrive all session data
+        $session = $request->session()->all();
+
+        //11.5 checked a key is present
+        if ($request->session()->has('_previous')) {
+            //11.3. Retrieving Data
+            $previous = $request->session()->get('_previous');
+          
+        }
+        // 11.7 flash data
+        $request->session()->flash('status', 'this is flash data');
+
+        //11.9regerate session id
+        //$request->session()->regenerate();
+        $data = [
+            'url'           => $url,
+            'currentPath'   => $currentPath,
+            'currentPathWithName' =>$currentPathWithName,
+            'signUrl'       => $signUrl,
+            'previous'       =>$previous['url'],
+        ];
+
         //6.2 header && 6.4 cookie 
-        return response()->view('/responsePractice',
-        ['url'=>$url,'currentPath'=>$currentPath,'currentPathWithName' =>$currentPathWithName,'signUrl'=> $signUrl])->header('X-Header','value')->cookie('cookieTest','cookie',10);
+        return response()->view('/responsePractice', ['data' => $data])->header('X-Header','value')->cookie('cookieTest','cookie',10);
 
         /* 6.6 redirect && 6.10 session
         return redirect('/')->with('msg','errors');
