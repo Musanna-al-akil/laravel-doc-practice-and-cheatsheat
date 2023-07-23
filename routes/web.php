@@ -21,36 +21,36 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-//1. basic router with closure && 6.1 response string & array
+//1.1. basic router with closure && 6.1 response string & array
 Route::get('/', function () {
     return view('welcome');
 });
 
+//2.(4) single action controller
+Route::get('/hello',SingleActionController::class)->name('hello');
 
-Route::get('/hello',SingleActionController::class)->name('hello');//2.(4) single action controller
-
-//2. route with method
+//1.2. route with method
 Route::get('/route-with-method',[BasicController::class,'routeWithMethod']);
 
-//3. available router methods 1. get, 2. post, 3.put, 4. patch, 5. delete, 6. options
+//1.3. available router methods 1. get, 2. post, 3.put, 4. patch, 5. delete, 6. options
 
-//4. route define with match and any
+//1.4. route define with match and any
 
 Route::match(['post','get'], '/match-route',[BasicController::class,'routeWithMatch']);
 Route::any('/route-any',function(){
         return 'this url will match with any route methods';
 });
 
-//6. Redirect route and permanent redirect route
+//1.6. Redirect route and permanent redirect route
 
 Route::redirect('/ovinondon','/hello','302');
 Route::permanentRedirect('/ola','hello');
 
-//7. View Routes
+//1.7. View Routes
 
 Route::view('/welcome','welcome',['name' => 'musanna']);
 
-//9. parameters and depenency injection and optional parameters
+//1.9. parameters and depenency injection and optional parameters
 
 Route::get('/user/{name}/id/{id}', function(Request $request, string $name, int $id ){
     return 'name : ' . $name . ' - ' . $id;  
@@ -65,7 +65,7 @@ Route::get('/name/{name?}',function(string $name = 'musanna'){
     return $name;
 });
 
-//10. regular expression constraints
+//1.10. regular expression constraints
 
 Route::get('/post/{id}/{slug}',function(int $id, string $slug){
     return $id . ' - ' . $slug;
@@ -73,11 +73,11 @@ Route::get('/post/{id}/{slug}',function(int $id, string $slug){
 //we can also use helper methods. whereNumber($parameterName), whereAlpha(),whereAlphpaNumeric(),
 //whereUuid(), whereUlid(), whereIn($paramName, [values]);
 
-//13. Named routes
+//1.13. Named routes
 
 Route::get('/post' , function(){return 'this is a name route';})->name('post');
 
-// 16. route group
+// 1.16. route group
     //middleware
 Route::middleware(['guest'])->group(function(){
     Route::get('/route-with-group-middleware',function(){ return 'route with group middleware';});
@@ -93,7 +93,7 @@ Route::middleware(['guest'])->group(function(){
     Route::name('admin.')->group(function () {
         //route
     });
-// 17. Implicit Binding
+// 1.17. Implicit Binding
 
     Route::get('/user/{user}', function (User $user){
         return $user->email;
@@ -101,7 +101,7 @@ Route::middleware(['guest'])->group(function(){
 
     //we can also pull soft deleted data by chaining withTrashed() method
 
-//18. scoped binding and customize missing model
+//1.18. scoped binding and customize missing model
 
 //by default if there are two and more paramenter nested laravel will use scopedBinding(); 
 Route::get('/user/{user}/post/{post}',function(User $user, $post){
@@ -110,13 +110,13 @@ Route::get('/user/{user}/post/{post}',function(User $user, $post){
     return Redirect::route('/');
 });
 
-//19. Implicit Enum Binding (PHP8.1)
+//1.19. Implicit Enum Binding (PHP8.1)
 
 Route::get('/enum/{category}',function(Category $category){
     return $category->value;
 })->middleware('throttle:ratelimitbytwo');
 
-//23. current route 
+//1.23. current route 
 Route::get('/current-route', function(){
     $route = Route::current();
     $routeName = Route::currentRouteName();
@@ -130,6 +130,7 @@ Route::get('/middleware',function(){
     return 'this route is bind with afterMiddleware';
 })->middleware(AfterMiddleware::class);
 
+// Resource and validation
 Route::resource('photos',PhotoController::class);
 
 //5.1 accessing request
@@ -140,3 +141,5 @@ Route::get('/responsepractice',[BasicController::class,'responsePractice'])->nam
 
 //7 
 Route::get('view-and-blade',[BasicController::class,'viewAndBlade'])->name('viewAndBlade');
+
+//

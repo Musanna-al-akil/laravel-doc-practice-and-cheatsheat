@@ -1,4 +1,4 @@
-# This doc about laravel middleware
+# 2. Middleware
 
 ### 1. Creating and defining middleware
 Reference [SecretTokenValidation.php](../app/Http/Middlewares/SecretTokenValidation.php) exp: 1

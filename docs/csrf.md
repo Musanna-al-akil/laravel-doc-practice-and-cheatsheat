@@ -1,4 +1,4 @@
-# CSRF Protection
+# 3. CSRF Protection
 
 ### 1. Preventing CSRF Requests
 

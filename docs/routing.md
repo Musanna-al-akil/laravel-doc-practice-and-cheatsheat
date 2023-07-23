@@ -1,4 +1,4 @@
-# this doc about laravel route doc
+# 1. Routing
 
 ### 1. basic route with closure
 Referece [routes/web.php](../routes/web.php)-> exp:1

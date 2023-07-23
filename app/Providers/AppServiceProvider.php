@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\Facades\Response;
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\ServiceProvider;
@@ -27,5 +28,9 @@ class AppServiceProvider extends ServiceProvider
         });
         //7.2 share view data globally
         View::share('author','Musanna Al');
+
+        Blade::if('disk', function (string $value) {
+            return config('filesystems.default') === $value;
+        });
     }
 }

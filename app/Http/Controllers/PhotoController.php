@@ -11,7 +11,7 @@ class PhotoController extends Controller
      */
     public function index()
     {
-        //
+        return view('Photos.index');
     }
 
     /**
@@ -19,7 +19,7 @@ class PhotoController extends Controller
      */
     public function create()
     {
-        //
+        return view('Photos.create');
     }
 
     /**
@@ -27,7 +27,7 @@ class PhotoController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        return to_route('photos.index');
     }
 
     /**
