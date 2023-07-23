@@ -34,7 +34,7 @@ class PhotoController extends Controller
     {
         $validated = $request->validated();
 
-        $path = public_path('images/');
+        $path = public_path('storage/images/');
         !is_dir($path) && mkdir($path, 0777, true);
 
         $imageName = time() . '.' .  $validated['image']->extension();

@@ -10,7 +10,7 @@
         @foreach ($data as $photo)
             <a href="{{route('photos.show',$photo->id)}}" class="w-full bg-white rounded-xl  shadow-gray-800 ">
                 <div>
-                    <img class="rounded-t-xl" src="images/{{$photo->photo}}">
+                    <img class="rounded-t-xl" src="storage/images/{{$photo->photo}}">
                     <h1>{{$photo->name}}</h1>
                 </div>
             </a>            
