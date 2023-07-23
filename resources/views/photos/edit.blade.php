@@ -10,20 +10,21 @@
 
 <div class="flex">
     <div class=" bg-white rounded-xl py-12 px-20 mx-auto my-12 shadow-gray-800 mt-8">
-        <form action="{{route('photos.store')}}" method="POST" enctype="multipart/form-data">
+        <form action="{{route('photos.update',$photo->id)}}" method="POST" enctype="multipart/form-data">
             @csrf
+            @method('PUT')
         <!-- 8.7.3 rendering component && 8.7.7 $attributes -->
-            <x-forms.input name="name" type="text" labelName="Name" class=" text-black">
+            <x-forms.input name="name" type="text" labelName="Name" :value="$photo->name" class=" text-black">
             </x-forms.input>
-            <x-forms.input name="email" type="text" labelName="Email" class=" text-black mt-4">
+            <x-forms.input name="email" type="text" :value="$photo->email" labelName="Email" class=" text-black mt-4">
             </x-forms.input>
-            <x-forms.input name="username" type="text" labelName="Username" class=" text-black mt-4">
+            <x-forms.input name="username" type="text" :value="$photo->username" labelName="Username" class=" text-black mt-4">
             </x-forms.input>
-            <x-forms.input name="number" type="text" labelName="Phone number" class=" text-black mt-4">
+            <x-forms.input name="number" type="text" labelName="Phone number" :value="$photo->number" class=" text-black mt-4">
             </x-forms.input>
-            <x-forms.input name="age" type="number" labelName="Age" class=" text-black mt-4">
+            <x-forms.input name="age" type="number" :value="$photo->age" labelName="Age" class=" text-black mt-4">
             </x-forms.input>
-            <x-forms.input name="show_data" type="checkbox" labelName="Data active" class=" text-black mt-4">
+            <x-forms.input name="show_data" type="checkbox"  labelName="Data active" class=" text-black mt-4">
             </x-forms.input>
             <x-forms.input name="image" type="file" labelName="Photo" class=" text-black mt-4">
             </x-forms.input>
