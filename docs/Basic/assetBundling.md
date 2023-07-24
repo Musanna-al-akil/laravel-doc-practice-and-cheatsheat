@@ -1,7 +1,7 @@
 # 9. Asset Bundling (Vite)
 
 ### 1. Configuring Vite
-Ref [vite.config.js](../vite.config.js). 
+Ref -> [vite.config.js](../../vite.config.js). 
 
 ```js
 export default defineConfig({
@@ -17,7 +17,7 @@ import '../css/app.css';
 ```
 
 ### 2. Loading Scripts And Styles
-Ref [responsePractice.blade.php](../resources/views/responsePractice.blade.php). exp: 9.2
+Ref -> [responsePractice.blade.php](../../resources/views/responsePractice.blade.php). exp: 9.2
 
 ```html
 @vite(['resoureces/css/app.css',...moreFile])
@@ -107,7 +107,7 @@ createInertiaApp({
 ```
 
 ### 7. URL Processing
-Ref [responsePractice.blade.php](../resources/views/responsePractice.blade.php). exp: 9.7
+Ref [responsePractice.blade.php](../../resources/views/responsePractice.blade.php). exp: 9.7
 
 To enable asset binding via vite, You have to use relative asset paths.
 ```html

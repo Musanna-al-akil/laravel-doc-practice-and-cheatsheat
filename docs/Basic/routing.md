@@ -1,7 +1,7 @@
 # 1. Routing
 
 ### 1. basic route with closure
-Referece [routes/web.php](../routes/web.php)-> exp:1
+Referece [routes/web.php](../../routes/web.php)-> exp:1
 
 ```php
     Route::get('/hello',function(){
@@ -9,14 +9,14 @@ Referece [routes/web.php](../routes/web.php)-> exp:1
     });
 ```
 ### 2. route with method
-Referece [routes/web.php](../routes/web.php)-> exp:2
+Referece [routes/web.php](../../routes/web.php)-> exp:2
 
 ```php
     Route::get('/route-with-method',[BasicController::class,'routewiht method']);
 ```
 
 ### 3. available router methods
-Referece [routes/web.php](../routes/web.php)-> exp:3
+Referece [routes/web.php](../../routes/web.php)-> exp:3
 
 ```php
     Route::get($uri, $callback);
@@ -28,7 +28,7 @@ Referece [routes/web.php](../routes/web.php)-> exp:3
 ```
 
 ### 4. route with match and any method
-Referece [routes/web.php](../routes/web.php)-> exp:4 
+Referece [routes/web.php](../../routes/web.php)-> exp:4 
 
 ```php
     Route::match(['get','put'], $uri, $callback);
@@ -41,7 +41,7 @@ Referece [routes/web.php](../routes/web.php)-> exp:4
 - **post, put, patch, delete routes should include a csrf token field. otherwise it will rejected.**
 
 ### 6. Redirect route and Permanent redirect route
-Referece [routes/web.php](../routes/web.php)-> exp:6
+Referece [routes/web.php](../../routes/web.php)-> exp:6
 
 ```php
     Route::redirect($uri, $destinationUri, $statusCode = 302,301);
@@ -49,7 +49,7 @@ Referece [routes/web.php](../routes/web.php)-> exp:6
 ```
 
 ### 7. View routes
-Referece [routes/web.php](../routes/web.php)-> exp:7
+Referece [routes/web.php](../../routes/web.php)-> exp:7
 
 ```php
     Route::view($uri, $viewPage, array $data);
@@ -64,7 +64,7 @@ Referece [routes/web.php](../routes/web.php)-> exp:7
 `php artisan route:list --only-vendor` -> show route that are defined by 3rd party package
 
 ### 9. parameters and dependency injection And optinal parameters
-Referece [routes/web.php](../routes/web.php)-> exp:9
+Referece [routes/web.php](../../routes/web.php)-> exp:9
 dependency will define first and rest will be url parameters.
 
 
@@ -79,7 +79,7 @@ dependency will define first and rest will be url parameters.
 ```
 
 ### 10. Regular expression constraints and helper methods
-Referece [routes/web.php](../routes/web.php)-> exp:10
+Referece [routes/web.php](../../routes/web.php)-> exp:10
 
 
 ```php
@@ -118,7 +118,7 @@ Route::pattern('id','[0-9]+');
 ```
 
 ### 13. Named routes
-Referece [routes/web.php](../routes/web.php)-> exp:13
+Referece [routes/web.php](../../routes/web.php)-> exp:13
 
 ```php
     Route::get($uri,$callback)->name(string $routeName);
@@ -142,7 +142,7 @@ Referece [routes/web.php](../routes/web.php)-> exp:13
 we can check current route with `$request->route()->named($routeNamed)`.
 
 ### 16. Route group
-Referece [routes/web.php](../routes/web.php)-> exp:16
+Referece [routes/web.php](../../routes/web.php)-> exp:16
 
 ```php
     Route::middleware([$middlewareName])->group(function(){
@@ -167,7 +167,7 @@ Referece [routes/web.php](../routes/web.php)-> exp:16
 ```
 
 ### 17. Implicit Binding
-Referece [routes/web.php](../routes/web.php)-> exp:17
+Referece [routes/web.php](../../routes/web.php)-> exp:17
 
 ```php
   Route::get('/user/{user}', function (User $user){
@@ -186,7 +186,7 @@ Referece [routes/web.php](../routes/web.php)-> exp:17
 ```
 
 ### 18. Custom Keys & Scoping and Customizing Missing Model Behavior
-Referece [routes/web.php](../routes/web.php)-> exp:18
+Referece [routes/web.php](../../routes/web.php)-> exp:18
 
 ```php
 //by default if there are two and more paramenter nested laravel will use scopedBinding(); 
@@ -198,7 +198,7 @@ Route::get('/user/{user}/post/{post}',function(User $user, Post $post){
 ```
 
 ### 19. Implicit Enum Binding (PHP8.1)
-Referece [routes/web.php](../routes/web.php)-> exp:19
+Referece [routes/web.php](../../routes/web.php)-> exp:19
 
 ```php
 Route::get('/enum/{category}',function(Category $category){
@@ -217,7 +217,7 @@ Route::fallback(function () {
 ```
 
 ### 21. Rate Limiting
-Referece [app/Providers/RouteServiceProvider.php](../app/Providers/RouteServiceProvider.php)-> exp:21
+Referece [app/Providers/RouteServiceProvider.php](../../app/Providers/RouteServiceProvider.php)-> exp:21
 
 ```php
 RateLimiter::for('api', function (Request $request) {
@@ -259,7 +259,7 @@ For convenience, you may use the @method Blade directive to generate the _method
 ```
 
 ### 23.Accessing The Current Route
-Referece [routes/web.php](../routes/web.php)-> exp:23
+Referece [routes/web.php](../../routes/web.php)-> exp:23
 ```php
     $route = Route::current();
     $routeName = Route::currentRouteName();

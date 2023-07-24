@@ -6,6 +6,7 @@ use App\Http\Requests\StorePhotoRequest;
 use App\Models\Photo;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Validator;
 
 class PhotoController extends Controller
@@ -15,6 +16,7 @@ class PhotoController extends Controller
      */
     public function index()
     {
+        
         $data = Photo::all();
         return view('Photos.index',['data'=>$data]);
     }
@@ -24,6 +26,8 @@ class PhotoController extends Controller
      */
     public function create()
     {
+        
+        Log::emergency('This is an emergency message,creating a photo :)');
         return view('Photos.create');
     }
 

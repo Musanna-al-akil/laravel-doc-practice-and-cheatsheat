@@ -1,7 +1,7 @@
 # 2. Middleware
 
 ### 1. Creating and defining middleware
-Reference [SecretTokenValidation.php](../app/Http/Middlewares/SecretTokenValidation.php) exp: 1
+Reference [SecretTokenValidation.php](../../app/Http/Middlewares/SecretTokenValidation.php) exp: 1
 
 ```
 $ php artisan make:middleware SecretTokenValidation
@@ -18,7 +18,7 @@ public function handle(Request $request, Closure $next): Response
 ```
 
 ### 2. after middleware
-Reference [AfterMiddleware.php](../app/Http/Middlewares/AfterMiddleware.php) exp: 2
+Reference [AfterMiddleware.php](../../app/Http/Middlewares/AfterMiddleware.php) exp: 2
 
 ```php
 public function handle(Request $request, Closure $next): Response
@@ -34,12 +34,12 @@ public function handle(Request $request, Closure $next): Response
 ### 3. Registering Middleware
 
 ##### 1.Global Middleware
-We can register a middleware in the  `$middleware` or `$middlewareGroup` property of [app/Http/Kernel.php](../app/Http/Kernel.php).exp: 3
+We can register a middleware in the  `$middleware` or `$middlewareGroup` property of [app/Http/Kernel.php](../../app/Http/Kernel.php).exp: 3
 We can also register alias in this file. We can also create our own middleware group in `$middlewareGroup`.
 
 ##### 2.Assigning Middleware To Routes
 
-Referece [routes/web.php](../routes/web.php)-> exp:3.2
+Referece [routes/web.php](../../routes/web.php)-> exp:3.2
 
 ```php
 Route::get($uri, $callback)->middleware(middlewareClass Or 'middlewarealias');
@@ -55,7 +55,7 @@ Route::get($uri, $callback)->withoutMiddleware(middlewareClass Or 'middlewareali
     does not apply to global middleware.
 
 ### 4. Sorting Middleware
-Reference-> [app/Http/Kernel.php](../app/Http/Kernel.php) exp: 4
+Reference-> [app/Http/Kernel.php](../../app/Http/Kernel.php) exp: 4
 
 By default it's not exist in kernel. We may copy it below if we need.
 ```php

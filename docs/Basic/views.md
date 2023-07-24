@@ -1,7 +1,7 @@
 # 7. Views
 
 ### 1. Creating & Rendering Views & pass data 
-Ref -> [Controller/BasicController](../app/Http/Controllers/BasicController.php). exp: 7.1
+Ref -> [Controller/BasicController](../../app/Http/Controllers/BasicController.php). exp: 7.1
 ```php
     //create view with facade
     return View::make('viewPractice',[$varName=> $varValue]);
@@ -16,7 +16,7 @@ Ref -> [Controller/BasicController](../app/Http/Controllers/BasicController.php)
 ```
 
 ### 2. Sharing Data With All Views
-Ref -> [Provider/AppServiceProvider](../app/Providers/AppServiceProvider.php). exp: 7.2
+Ref -> [Provider/AppServiceProvider](../../app/Providers/AppServiceProvider.php). exp: 7.2
 To share data globally you can register `share` method of `View` in any service provider `boot` method.
 ```php
    public function boot(): void
@@ -31,7 +31,7 @@ you want to be bound to a view each time that view is rendered, a view composer 
 logic into a single location.
 To create a composer first you have to create a composer class in `app/View/Composers` and define `composer`
 method. In this method define what data you want to share .
-Ref -> [Composers/MsgComposer](../app/View/Composers/MsgComposer.php). exp: 7.3
+Ref -> [Composers/MsgComposer](../../app/View/Composers/MsgComposer.php). exp: 7.3
 ```php
  public function compose(View $view): void
     {
@@ -39,7 +39,7 @@ Ref -> [Composers/MsgComposer](../app/View/Composers/MsgComposer.php). exp: 7.3
     }
 ```
 After that add this composer in a service provider via `View::composer` method. 
-Ref -> [Provider/ViewServiceProvider](../app/Providers/ViewServiceProvider.php). exp: 7.3
+Ref -> [Provider/ViewServiceProvider](../../app/Providers/ViewServiceProvider.php). exp: 7.3
 ```php
 View::composer($ViewFileName, composerDefineClass);
 //wild card define 

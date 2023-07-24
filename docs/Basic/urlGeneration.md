@@ -1,14 +1,14 @@
 # 10. URL Generation
 
 ### 1. Generating URLs
-Ref -> [Controllers/BasicController.php](../app/Http/Controllers/BasicController.php). exp: 10.1
+Ref -> [Controllers/BasicController.php](../../app/Http/Controllers/BasicController.php). exp: 10.1
 ```php
 url('/post/{$post-id}');
 //http://example.com/post/1
 ```
 
 ### 2. Accessing the current Url
-Ref -> [Controllers/BasicController.php](../app/Http/Controllers/BasicController.php). exp: 10.2
+Ref -> [Controllers/BasicController.php](../../app/Http/Controllers/BasicController.php). exp: 10.2
 
 ```php
 //get the current url without the query string
@@ -22,21 +22,21 @@ URL::current();
 ```
 
 ### 3. URLs For Named Routes
-Ref -> [Controllers/BasicController.php](../app/Http/Controllers/BasicController.php). exp: 10.3
+Ref -> [Controllers/BasicController.php](../../app/Http/Controllers/BasicController.php). exp: 10.3
 ```php
 $currentPathWithName = route('userName',['name'=>'musanna','id'=>5,'ping'=>'pong']);
 //https://example.com/user/musanna/id/5/?ping=pong
 ```
 
 ### 4. Signed URLs
-Ref -> [Controllers/BasicController.php](../app/Http/Controllers/BasicController.php). exp: 10.4
+Ref -> [Controllers/BasicController.php](../../app/Http/Controllers/BasicController.php). exp: 10.4
 ```php
 $signUrl = Url::signedRoute('signUrl',['name'=>'musanna','id'=>5,'ping'=>'pong']);
 $signUrlWithTemporaryTime = URL::temporarySignedRoute('signUrl',now()->addMinutes(10),['name'=>'musanna','id'=>5,'ping'=>'pong']);
 ```
 
 ### 5. Validating Signed Route Requests
-Ref -> [web/Route.php](../routes/web.php). exp: 10.4
+Ref -> [web/Route.php](../../routes/web.php). exp: 10.4
 ```php
 //sign Url validation with middleware
 Route::post('/unsubscribe/{user}', [$class,$method])->name('unsubscribe')->middleware('signed');

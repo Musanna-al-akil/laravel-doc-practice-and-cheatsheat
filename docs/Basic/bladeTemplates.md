@@ -1,7 +1,7 @@
 # 8. Blade Templates
 
 ### 1. Displaying Data
-Ref -> [views/viewAndBlade](../resources/views/viewAndBlade.blade.php). exp: 8.1
+Ref -> [views/viewAndBlade](../../resources/views/viewAndBlade.blade.php). exp: 8.1
 
 ```html
 <p> {{$variable}} </p>
@@ -10,12 +10,12 @@ Ref -> [views/viewAndBlade](../resources/views/viewAndBlade.blade.php). exp: 8.1
 ```
 
 ### 2. Displaying Unescaped Data
-Ref -> [views/viewAndBlade](../resources/views/viewAndBlade.blade.php). exp: 8.2
+Ref -> [views/viewAndBlade](../../resources/views/viewAndBlade.blade.php). exp: 8.2
 ```html
 {!! '<h1>hello</h1>' !!}
 ```
 ### 3. Blade & JavaScript Frameworks
-Ref -> [views/viewAndBlade](../resources/views/viewAndBlade.blade.php). exp: 8.3
+Ref -> [views/viewAndBlade](../../resources/views/viewAndBlade.blade.php). exp: 8.3
 ```html
  @{{ name }}
  //output: {{ name }}
@@ -25,7 +25,7 @@ Ref -> [views/viewAndBlade](../resources/views/viewAndBlade.blade.php). exp: 8.3
 ```
 
 ### 4. Rendering json
-Ref -> [views/viewAndBlade](../resources/views/viewAndBlade.blade.php). exp: 8.4
+Ref -> [views/viewAndBlade](../../resources/views/viewAndBlade.blade.php). exp: 8.4
 
 ```html
 {{json_encode($array)}}
@@ -37,7 +37,7 @@ var app = {{Js:from($array)}};
 ```
 
 ### 5. The @verbatim Directive
-Ref -> [views/viewAndBlade](../resources/views/viewAndBlade.blade.php). exp: 8.5
+Ref -> [views/viewAndBlade](../../resources/views/viewAndBlade.blade.php). exp: 8.5
 
 If you are displaying JavaScript variables in a large portion of your template, you may 
 wrap the HTML in the `@verbatim` directive so that you do not have to prefix each Blade 
@@ -51,7 +51,7 @@ echo statement with an `@` symbol:
 ```
 
 ### 6. Blade Directives
-Ref -> [views/viewAndBlade](../resources/views/viewAndBlade.blade.php). exp: 8.5
+Ref -> [views/viewAndBlade](../../resources/views/viewAndBlade.blade.php). exp: 8.5
 
 ```html
     @if(condition)
@@ -175,7 +175,7 @@ $isActive = false;
 ## 7. Components
 
 ### 7.1 Creating Component
-Ref -> [Components/inputField.php](../app/View/Components/inputField.php). exp:8.7.1
+Ref -> [Components/inputField.php](../../app/View/Components/inputField.php). exp:8.7.1
 ```
 //create class based components
 $ php artisan make:component formField
@@ -198,7 +198,7 @@ public function boot(): void
 }
 ```
 ### 7.3 Rendering Components
-Ref -> [photos/create.blade.php](../resources/views/photos/create.blade.php). exp: 8.7.3
+Ref -> [photos/create.blade.php](../../resources/views/photos/create.blade.php). exp: 8.7.3
 ```html
 <x-form-input/>
 
@@ -209,18 +209,18 @@ If you would like to conditionally render your component, you may define a `shou
 your component class. If the `shouldRender` method returns false the component will not be rendered
 
 ### 7.4 Passing Data To Components
-Ref -> [photos/create.blade.php](../resources/views/photos/create.blade.php). exp: 8.7.3
+Ref -> [photos/create.blade.php](../../resources/views/photos/create.blade.php). exp: 8.7.3
 ```html
 <x-forms.input type="text" :label="$label">
 ```
-Ref -> [Components/inputField.php](../app/View/Components/inputField.php). exp:8.7.4
+Ref -> [Components/inputField.php](../../app/View/Components/inputField.php). exp:8.7.4
 ```php
  public function __construct(
         public string $type,
         public string $message,
     ) {}
 ```
-Ref -> [components/forms/input](../resources/views/components/forms/input.blade.php). exp: 8.7.4
+Ref -> [components/forms/input](../../resources/views/components/forms/input.blade.php). exp: 8.7.4
 ```html
 <div>
     <label>{{$label}} : </label>
@@ -246,7 +246,7 @@ protected $except = ['type'];
 ### 7.7 Component Attributes
 Additional html attributes(such as class) that are not define component can be access via
 `{{$attributes}}`.
-Ref -> [photos/create.blade.php](../resources/views/photos/create.blade.php). exp: 8.7.7
+Ref -> [photos/create.blade.php](../../resources/views/photos/create.blade.php). exp: 8.7.7
 ```html
 <div {{ $attributes }}>
     <!-- Component content -->
@@ -254,7 +254,7 @@ Ref -> [photos/create.blade.php](../resources/views/photos/create.blade.php). ex
 ```
 
 ### 7.8 Default / Merged Attributes
-Ref -> [components/forms/input](../resources/views/components/forms/input.blade.php). exp: 8.7.8
+Ref -> [components/forms/input](../../resources/views/components/forms/input.blade.php). exp: 8.7.8
 
 ```html
 <div {{ $attributes->merge(['class' => 'alert alert-'.$type]) }}>
@@ -285,7 +285,7 @@ Get a specific attribute's value:
 ```
 
 ### 7.10 Slots
-Ref -> [components/forms/input](../resources/views/components/forms/input.blade.php).
+Ref -> [components/forms/input](../../resources/views/components/forms/input.blade.php).
 
 ```html 
 <div  {{ $attributes->merge(['class'=>'font-bold']) }} >
@@ -296,7 +296,7 @@ Ref -> [components/forms/input](../resources/views/components/forms/input.blade.
     {{$slot}}
 </div>
 ```
-Ref -> [photos/create.blade.php](../resources/views/photos/create.blade.php).
+Ref -> [photos/create.blade.php](../../resources/views/photos/create.blade.php).
 ```html
 <x-forms.input type="text" label="Name" class="text-medium text-green-800" data="nothing">
     <x-slot:title>pingpong</x-slot:title>
@@ -337,7 +337,7 @@ Ref -> [photos/create.blade.php](../resources/views/photos/create.blade.php).
 ```
 
 ### 8. Layouts Using Template Inheritance
-Ref -> [layouts/guestLayout](../resources/views/layouts/guestLayout.blade.php).
+Ref -> [layouts/guestLayout](../../resources/views/layouts/guestLayout.blade.php).
 ```html
 <html>
     <head>
@@ -354,7 +354,7 @@ Ref -> [layouts/guestLayout](../resources/views/layouts/guestLayout.blade.php).
     </body>
 </html>
 ```
-Ref -> [photos/create.blade.php](../resources/views/photos/create.blade.php).
+Ref -> [photos/create.blade.php](../../resources/views/photos/create.blade.php).
 ```html
 @extends('layouts.app')
  
@@ -382,7 +382,7 @@ field to spoof these HTTP verbs. The `@method` Blade directive can create this f
 ```
 
 ### 10. Validation Errors
-Ref -> [layouts/guestLayout](../resources/views/layouts/guestLayout.blade.php).
+Ref -> [layouts/guestLayout](../../resources/views/layouts/guestLayout.blade.php).
 ```html
 <label for="title">Post Title</label>
  
@@ -424,7 +424,7 @@ Layout
 Follow Laravel Doc.
 
 ### 14. Custom If Statements
-Ref [Providers/AppServiceProvider.php](../app/Providers/AppServiceProvider.php)
+Ref [Providers/AppServiceProvider.php](../../app/Providers/AppServiceProvider.php)
 ```php
 public function boot(): void
 {

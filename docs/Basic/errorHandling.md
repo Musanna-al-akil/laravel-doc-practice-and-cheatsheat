@@ -6,7 +6,7 @@
 ```
 composer require sentry/sentry-laravel
 ```
-2. Add sentry in [Exceptions/Handler.php](../app/Exceptions/Handler.php).
+2. Add sentry in [Exceptions/Handler.php](../../app/Exceptions/Handler.php).
 ```php
 public function register(): void
 {
@@ -35,7 +35,7 @@ protected function context():array
 You can also add above `context` method in custom exceptions. And log a useful data.
 
 ### 4. Exception Log Levels
-Ref -> [Exceptions/invalidOrderException](../app/Exceptions/InvalidOrderException.php). exp: 13.4
+Ref -> [Exceptions/invalidOrderException](../../app/Exceptions/InvalidOrderException.php). exp: 13.4
 
 ```php
 protected $levels = [

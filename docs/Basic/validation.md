@@ -13,7 +13,7 @@ For less complex validation and quickstart, You may use `$request->validate`.
 ```
 
 ### 2. Displaying The Validation Errors
-Ref -> [components/forms/input](../resources/views/components/forms/input.blade.php). exp:12.2
+Ref -> [components/forms/input](../../resources/views/components/forms/input.blade.php). exp:12.2
 ```html
 <!-- access all errors-->
 @foreach ($errors->all() as $error)
@@ -30,7 +30,7 @@ You can customize error messages from `lan/en/validation.php` file. you may inst
 create it using the lang:publish Artisan command.
 
 ### 4. Repopulating Forms ( old() )
-Ref -> [components/forms/input](../resources/views/components/forms/input.blade.php).
+Ref -> [components/forms/input](../../resources/views/components/forms/input.blade.php).
 ```html
 input type="text" name="title" value="{{ old('title') }}">
 ```
@@ -65,7 +65,7 @@ $ php artisan make:request StorePhotoRequest
 ```
 This command will create a `StorePhotoRequest` in `app/Http/Requests` with `authorize` and `rules` methods. You can define the rules in `rules` method. The `rules` method return a array.
 
-Ref -> [StorePhotoRequest.php](../app/Http/Requests/StorePhotoRequest.php). exp: 12.6.1
+Ref -> [StorePhotoRequest.php](../../app/Http/Requests/StorePhotoRequest.php). exp: 12.6.1
 ```php
 public function rules(): array
 {
@@ -77,7 +77,7 @@ public function rules(): array
 ```
 
 ### 6.2 Performing Additional Validation
-Ref -> [StorePhotoRequest.php](../app/Http/Requests/StorePhotoRequest.php). exp: 12.6.2
+Ref -> [StorePhotoRequest.php](../../app/Http/Requests/StorePhotoRequest.php). exp: 12.6.2
 You can also define additional validation rules in return array with invokable classes.
 ```php
 public function after(): array
@@ -110,7 +110,7 @@ protected $redirect = '/dashboard';
 ```
 
 ### 6.5 Authorizing Form Requests
-Ref -> [StorePhotoRequest.php](../app/Http/Requests/StorePhotoRequest.php). exp: 12.6.5
+Ref -> [StorePhotoRequest.php](../../app/Http/Requests/StorePhotoRequest.php). exp: 12.6.5
 You can also define the authorization rules in `authorize` method. The `authorize` method return 
 a boolean value. If you don't need authorization check, you can return `true`.
 ```php
@@ -123,7 +123,7 @@ public function authorize(): bool
 ```
 
 ### 6.6 Customizing The Error Messages
-Ref -> [StorePhotoRequest.php](../app/Http/Requests/StorePhotoRequest.php). exp: 12.6.6
+Ref -> [StorePhotoRequest.php](../../app/Http/Requests/StorePhotoRequest.php). exp: 12.6.6
 
 ```php
 public function messages(): array
@@ -161,7 +161,7 @@ protected function passedValidation(): void
 ```
 
 ## 7. Manually Creating Validators
-Ref -> [Controllers/PhotoController](../app/Http/Controllers/PhotoController.php) `update` method. exp:12.7
+Ref -> [Controllers/PhotoController](../../app/Http/Controllers/PhotoController.php) `update` method. exp:12.7
 
 ```php
     $validator = Validator::make($request->all(),[
@@ -221,7 +221,7 @@ $validator->after(function ($validator) {
 ```
 
 ### 8. Working With Validated Input
-Ref -> [Controllers/PhotoController](../app/Http/Controllers/PhotoController.php) 
+Ref -> [Controllers/PhotoController](../../app/Http/Controllers/PhotoController.php) 
 ```php
 //retrive validated input
 $validated = $request->validated();

@@ -27,7 +27,7 @@ Laravel's Redis documentation.
 
 ### 3. Retrieving Data
 
-Ref -> [Http/BasicController.php](../app/Http/Controllers/BasicController.php). exp: 11.3
+Ref -> [Http/BasicController.php](../../app/Http/Controllers/BasicController.php). exp: 11.3
 ```php 
 $sessionValue = $request->session()->get($key, 'default');
 
@@ -38,13 +38,13 @@ $value = session($key, 'default');
 
 ### 4. Retrieving All Session Data
 
-Ref -> [Http/BasicController.php](../app/Http/Controllers/BasicController.php). exp: 11.4
+Ref -> [Http/BasicController.php](../../app/Http/Controllers/BasicController.php). exp: 11.4
 ```php
 $allData = $request->session()->all();
 ```
 
 ### 5. Determining If An Item Exists In The Session
-Ref -> [Http/BasicController.php](../app/Http/Controllers/BasicController.php). exp: 11.5
+Ref -> [Http/BasicController.php](../../app/Http/Controllers/BasicController.php). exp: 11.5
 ```php
 //has method return true when -> Item is present and is not null
 if ($request->session()->has('users')) {
@@ -63,7 +63,7 @@ if ($request->session()->missing('users')) {
 ```
 
 ### 6. Storing Data
-Ref -> [Http/BasicController.php](../app/Http/Controllers/BasicController.php). exp: 11.6
+Ref -> [Http/BasicController.php](../../app/Http/Controllers/BasicController.php). exp: 11.6
 ```php
 //store data in session
 session(['key'=>'value']);
@@ -82,7 +82,7 @@ $request->session->decrement('count', $decrementBy = 2);
 ```
 
 ### 7. Flash Data
-Ref -> [Http/BasicController.php](../app/Http/Controllers/BasicController.php). exp: 11.7
+Ref -> [Http/BasicController.php](../../app/Http/Controllers/BasicController.php). exp: 11.7
 ```php
 $request->session()->flash('status','This is flash data');
 //if you need to persist you flash data several requests, reflash method will do it.

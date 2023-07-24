@@ -1,7 +1,7 @@
 # 5. HTTP Requests
 
 ### 1. Accessing The Request
-Ref [Controllers/BasiController.php](../app/Http/Controllers/BasiController.php). exp: 5.1
+Ref [Controllers/BasiController.php](../../app/Http/Controllers/BasiController.php). exp: 5.1
 
 ```php
 public function index(Request $request): RedirectResponse
@@ -11,7 +11,7 @@ public function index(Request $request): RedirectResponse
 ```
 
 ### 2. Retrieving The Request Path
-Ref [Controllers/BasiController.php](../app/Http/Controllers/BasiController.php). exp: 5.2
+Ref [Controllers/BasiController.php](../../app/Http/Controllers/BasiController.php). exp: 5.2
 
 ```php
 $path = $request->path();
@@ -34,7 +34,7 @@ if ($request->routeIs('admin.*')) {
 ```
 
 ### 4. Retrieving The Request Full URL
-Ref [Controllers/BasiController.php](../app/Http/Controllers/BasiController.php). exp: 5.4
+Ref [Controllers/BasiController.php](../../app/Http/Controllers/BasiController.php). exp: 5.4
 
 ```php
 $request->url();
@@ -57,7 +57,7 @@ $request->fullUrlWithoutQuery(['search']);
 ```
 
 ### 5. Retrieving The Request Host
-Ref [Controllers/BasiController.php](../app/Http/Controllers/BasiController.php). exp: 5.5
+Ref [Controllers/BasiController.php](../../app/Http/Controllers/BasiController.php). exp: 5.5
 
 ```php
 $host = $request->host();
@@ -66,7 +66,7 @@ $hostWithPortAndProtocal = $request->schemeAndHttpHost();
 ```
 
 ### 6. Retrieving The Request Method
-Ref [Controllers/BasiController.php](../app/Http/Controllers/BasiController.php). exp: 5.6
+Ref [Controllers/BasiController.php](../../app/Http/Controllers/BasiController.php). exp: 5.6
 
 ```php
 $method =$request->method();
@@ -77,7 +77,7 @@ if ($request->isMethod('post')) {
 ```
 
 ### 7. Request Headers
-Ref [Controllers/BasiController.php](../app/Http/Controllers/BasiController.php). exp: 5.7
+Ref [Controllers/BasiController.php](../../app/Http/Controllers/BasiController.php). exp: 5.7
 ```php
 $header= $request->header('X-Header-One');
 //check header
@@ -87,13 +87,13 @@ $token = $request->bearerToken();
 ```
 
 ### 8. Request IP Address
-Ref [Controllers/BasiController.php](../app/Http/Controllers/BasiController.php). exp: 5.8
+Ref [Controllers/BasiController.php](../../app/Http/Controllers/BasiController.php). exp: 5.8
 ```php
 $ip = $request->ip();
 ```
 
 ### 9. Content Negotiation
-Ref [Controllers/BasiController.php](../app/Http/Controllers/BasiController.php). exp: 5.9
+Ref [Controllers/BasiController.php](../../app/Http/Controllers/BasiController.php). exp: 5.9
 ```php
 $contentTypes = $request->getAcceptableContentTypes();
 
@@ -108,7 +108,7 @@ if ($request->expectsJson()) {
 ## Retrieving Input
 
 ### 10.Retrieving All Input Data
-Ref [Controllers/BasiController.php](../app/Http/Controllers/BasiController.php). exp: 5.10
+Ref [Controllers/BasiController.php](../../app/Http/Controllers/BasiController.php). exp: 5.10
 ```php
 $request->all();
 $request->collect();
@@ -118,7 +118,7 @@ $request->collect('users')->each(function (string $user) {
 ```
 
 ### 11. Retrieving An Input Value
-Ref [Controllers/BasiController.php](../app/Http/Controllers/BasiController.php). exp: 5.11
+Ref [Controllers/BasiController.php](../../app/Http/Controllers/BasiController.php). exp: 5.11
 
 ```php
 $request->input('name');
@@ -130,7 +130,7 @@ $request->input('product.0.name');
 ### 12. Retrieving Input From The Query String
 While the `input` method retrieves values from the entire request payload (including the query string), 
 the `query` method will only retrieve values from the query string:
-Ref [Controllers/BasiController.php](../app/Http/Controllers/BasiController.php). exp: 5.12
+Ref [Controllers/BasiController.php](../../app/Http/Controllers/BasiController.php). exp: 5.12
 ```php
 $request->query('name');
 // retrive all query data
@@ -167,7 +167,7 @@ $input = $request->except(['credit_card']);
 ```
 
 ### 14. Determining If Input Is Present
-Ref [Controllers/BasiController.php](../app/Http/Controllers/BasiController.php). exp: 5.14
+Ref [Controllers/BasiController.php](../../app/Http/Controllers/BasiController.php). exp: 5.14
 
 ```php
 if($request->has(['name','password']))

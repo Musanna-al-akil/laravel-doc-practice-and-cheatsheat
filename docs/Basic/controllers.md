@@ -8,7 +8,7 @@ $ php artisan make:controller UserController
 
 ### 2. Single Action Controllers
 
-Referance -> [Controllers/SingleActionController](../app/Http/Controllers/SingleActionController.php). exp: 2
+Referance -> [Controllers/SingleActionController](../../app/Http/Controllers/SingleActionController.php). exp: 2
 If a controller action is particularly complex, you might find it convenient to dedicate an 
 entire controller class to that single action. To accomplish this, you may define a single 
 `__invoke` method within the controller:
@@ -31,7 +31,7 @@ There are three way to define middleware in a route.
 
 1. assign `middleware` method in routes.
 
-2. using `middleware` method in controller constructor. Ref -> [SingleActionController](../app/Http/Controllers/SingleActionController.php). exp: 3
+2. using `middleware` method in controller constructor. Ref -> [SingleActionController](../../app/Http/Controllers/SingleActionController.php). exp: 3
 ```php
  public function __construct()
     {
@@ -50,7 +50,7 @@ $this->middleware(function (Request $request, Closure $next) {
 ```
 
 ### 4. Resource Controllers
-Ref -> [Controllers/PhotoController](../app/Http/Controllers/PhotoController.php). exp: 4
+Ref -> [Controllers/PhotoController](../../app/Http/Controllers/PhotoController.php). exp: 4
 
 Create resource controller
 ```

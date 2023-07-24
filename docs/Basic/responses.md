@@ -3,7 +3,7 @@
 ### 1. Creating Responses
 
 #### 1. Strings & Arrays
-Ref [routes/web.php](../routes/web.php). exp 6.1.
+Ref [routes/web.php](../../routes/web.php). exp 6.1.
 ```php
 Route::get('/',function(){
     return 'hello';
@@ -12,13 +12,13 @@ Route::get('/',function(){
 ```
 
 #### 2. Response Objects
-Ref [Controllers/BasicController](../app/Http/Controllers/BasicController.php). exp 6.1.2
+Ref [Controllers/BasicController](../../app/Http/Controllers/BasicController.php). exp 6.1.2
 ```php
 return response($string, $statusCode);
 ```
 
 ### 2. Attaching Headers To Responses
-Ref [Controllers/BasicController](../app/Http/Controllers/BasicController.php). exp 6.2
+Ref [Controllers/BasicController](../../app/Http/Controllers/BasicController.php). exp 6.2
 
 ```php
 return response($content)->header($headerName, $headerValue)->header($headName2, $headerValue2);
@@ -27,7 +27,7 @@ return response($content)->withHeaders([$headerName=> $headerValue,...]);
 ```
 
 ### 3. Cache Control Middleware
-Ref [routes/web.php](../routes/web.php). exp 6.3
+Ref [routes/web.php](../../routes/web.php). exp 6.3
 Laravel includes a cache.headers middleware, which may be used to quickly set the Cache-Control 
 header for a group of routes. Directives should be provided using the "snake case" equivalent of 
 the corresponding cache-control directive and should be separated by a semicolon. If etag is 
@@ -42,7 +42,7 @@ Route::middleware('cache.headers:public;max_age=2628000;etag')->group(function (
 ```
 
 ### 4. Attaching Cookies To Responses
-Ref [Controllers/BasicController](../app/Http/Controllers/BasicController.php). exp 6.4
+Ref [Controllers/BasicController](../../app/Http/Controllers/BasicController.php). exp 6.4
 
 ```php
 return response('Hello World')->cookie(
@@ -63,7 +63,7 @@ Cookie::expire($name);
 ```
 
 ### 5. Cookies & Encryption(disable)
-Ref [Middleware\EncryptCookie](../app/Http/Middleware/EncryptCookies.php). exp 6.4
+Ref [Middleware\EncryptCookie](../../app/Http/Middleware/EncryptCookies.php). exp 6.4
 You can disable cookie encryption by using $except property of `Ap\Http\Middleware\EncryptCookie`.
 ```php
 protectet $except = [
@@ -73,7 +73,7 @@ protectet $except = [
 
 ### 6. Redirects
 
-Ref [Controllers/BasicController](../app/Http/Controllers/BasicController.php). exp 6.6
+Ref [Controllers/BasicController](../../app/Http/Controllers/BasicController.php). exp 6.6
 ```php
 return redirect()
 //back prev url
@@ -99,7 +99,7 @@ return redirect()->away('https://gooogle.com');
 ```
 
 ### 10. Redirecting With Flashed Session Data
-Ref [Controllers/BasicController](../app/Http/Controllers/BasicController.php). exp 6.6
+Ref [Controllers/BasicController](../../app/Http/Controllers/BasicController.php). exp 6.6
 
 ```php
 return redirect('dashboard')->with($name, $value);
@@ -114,13 +114,13 @@ return redirect('dashboard')->with($name, $value);
 ```
 
 ### 11. Redirecting With Input
-Ref [Controllers/BasicController](../app/Http/Controllers/BasicController.php). exp 6.6
+Ref [Controllers/BasicController](../../app/Http/Controllers/BasicController.php). exp 6.6
 ```php
 return redirect()->withInput();
 ```
 
 ### 12. View Responses
-Ref [Controllers/BasicController](../app/Http/Controllers/BasicController.php). exp 6.12
+Ref [Controllers/BasicController](../../app/Http/Controllers/BasicController.php). exp 6.12
 ```php
 return response()->view($bladePath, $data, 200)->header(...);
 ```
@@ -163,7 +163,7 @@ return response()->file($pathToFile, $headers);
 ```
 
 ### 17. Response Macros
-Ref [Providers\AppServiceProvider](../app/Providers/AppServiceProvider.php). exp 6.12
+Ref [Providers\AppServiceProvider](../../app/Providers/AppServiceProvider.php). exp 6.12
 
 ```php
  public function boot(): void
