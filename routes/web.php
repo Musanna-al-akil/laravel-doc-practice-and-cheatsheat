@@ -26,8 +26,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-//2.(4) single action controller
-Route::get('/hello',SingleActionController::class)->name('hello');
+//2.(4) single action controller && 13.1 sentry test
+Route::get('/debug-sentry',SingleActionController::class)->name('debug');
 
 //1.2. route with method
 Route::get('/route-with-method',[BasicController::class,'routeWithMethod']);
