@@ -1,6 +1,7 @@
 <?php
 
 use App\Enums\Category;
+use App\Http\Controllers\AdvancedController;
 use App\Http\Controllers\BasicController;
 use App\Http\Controllers\PhotoController;
 use App\Http\Controllers\SingleActionController;
@@ -142,4 +143,7 @@ Route::get('/responsepractice',[BasicController::class,'responsePractice'])->nam
 //7 
 Route::get('view-and-blade',[BasicController::class,'viewAndBlade'])->name('viewAndBlade');
 
-//
+
+//Digging Deeper
+//Collections
+Route::get('/collection',[AdvancedController::class,'collection'])->name('collection');
