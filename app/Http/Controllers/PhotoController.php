@@ -7,6 +7,7 @@ use App\Models\Photo;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Validator;
 
 class PhotoController extends Controller
@@ -42,7 +43,7 @@ class PhotoController extends Controller
         !is_dir($path) && mkdir($path, 0777, true);
 
         $imageName = time() . '.' .  $validated['image']->extension();
-        $request->image->move($path, $imageName);
+        Storage::disk('public')->put('images/'.$imageName, $request->image);
 
         $photo  = new Photo;
         $photo->name    = $validated['name'];
